@@ -6,6 +6,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { ConfigsModule } from '@app/configs';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
@@ -15,6 +16,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     BrowserModule,
     LayoutModule,
+    AppRoutingModule,
 
     // core, shared, and configs
     CoreModule,
