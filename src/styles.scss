@@ -19,7 +19,7 @@ body {
 #content {
   float: left;
   padding: 3%;
-  width: 64%;
+  width: 52%;
 }
 
 /* Content After
@@ -27,7 +27,7 @@ body {
 
 #columns>#content {
   padding: 3%;
-  width: 64%;
+  width: 52%;
 }
 
 /* Sidebar Before
@@ -36,7 +36,7 @@ body {
 #sidebar {
   float: right;
   padding: 3%;
-  width: 24%;
+  width: 36%;
 }
 
 /* Sidebar After
@@ -44,7 +44,11 @@ body {
 
 #columns>#sidebar {
   padding: 3%;
-  width: 24%;
+  width: 36%;
+}
+
+mat-icon {
+  margin-right: 10px;
 }
 
 // Mobile
