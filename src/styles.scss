@@ -6,7 +6,7 @@ body {
   padding: 0;
 }
 
-#columns {
+.columns {
   display: -ms-flex;
   display: -webkit-flex;
   display: flex;
@@ -16,7 +16,7 @@ body {
 /* Content Before
 --------------------------------------------- */
 
-#content {
+.content {
   float: left;
   padding: 3%;
   width: 52%;
@@ -25,7 +25,7 @@ body {
 /* Content After
 --------------------------------------------- */
 
-#columns>#content {
+.columns > .content {
   padding: 3%;
   width: 52%;
 }
@@ -33,7 +33,7 @@ body {
 /* Sidebar Before
 --------------------------------------------- */
 
-#sidebar {
+.sidebar {
   float: right;
   padding: 3%;
   width: 36%;
@@ -42,9 +42,50 @@ body {
 /* Sidebar After
 --------------------------------------------- */
 
-#columns>#sidebar {
+.columns > .sidebar {
   padding: 3%;
   width: 36%;
+}
+.width100 {
+  width: 100%;
+}
+
+.textcenter {
+  text-align: center;
+  width: 100%;
+}
+
+.textright {
+  text-align: right;
+  width: 100%;
+}
+
+// Creates Two and Three Column Layouts
+.parent {
+  display: table;
+  width: 100%;
+  overflow: auto;
+  position: relative;
+}
+
+.threecol {
+  width: 27%;
+  padding: 0 3%;
+  display: table-cell;
+}
+.twocol {
+  width: 44%;
+  padding: 0 3%;
+  display: table-cell;
+}
+.left {
+  float: left;
+}
+.center {
+  display: inline-block;
+}
+.right {
+  float: right;
 }
 
 mat-icon {
@@ -53,15 +94,15 @@ mat-icon {
 
 // Mobile
 @media all and (max-width: 768px) {
-  #columns {
+  .columns {
     -webkit-flex-flow: column wrap;
     flex-flow: column wrap;
   }
-  #columns>#content {
+  .columns > .content {
     width: 94%;
     padding: 3%;
   }
-  #columns>#sidebar {
+  .columns > .sidebar {
     width: 94%;
     padding: 3%;
   }
@@ -69,7 +110,7 @@ mat-icon {
 
 // Material Overides
 .mat-tab-label {
-  opacity: 1.0 !important;
+  opacity: 1 !important;
   color: $primary-color-text;
 }
 

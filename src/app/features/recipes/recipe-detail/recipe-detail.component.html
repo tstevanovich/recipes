@@ -3,12 +3,26 @@
     <mat-card-title>
       <mat-icon>details</mat-icon>
       <h1>Recipe Details</h1>
+      <mat-divider></mat-divider>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <ul>
-      <li>Add spice</li>
-      <li>Cook 10 mins</li>
-    </ul>
+    <p>
+      <img src="https://www.seriouseats.com/images/2015/09/20150914-pressure-cooker-recipes-roundup-09.jpg" alt="" class="width100">
+    </p>
+    <h2>Recipe Name</h2>
+    <p>
+      <button mat-raised-button [matMenuTriggerFor]="recipeMenu" color="primary">
+        Manage Recipe
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #recipeMenu="matMenu">
+        <button mat-menu-item>To Shopping List</button>
+        <button mat-menu-item>Edit Recipe</button>
+        <button mat-menu-item>Delete Recipe</button>
+      </mat-menu>
+    </p>
+    <p>Description</p>
+    <p>Ingredients</p>
   </mat-card-content>
 </mat-card>

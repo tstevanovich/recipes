@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule, MatCardModule, MatDividerModule, MatIconModule, MatMenuModule } from '@angular/material';
 
 import { RecipeHomeComponent } from '@app/features/recipes/recipe-home/recipe-home.component';
 import { RecipeListComponent } from '@app/features/recipes/recipe-list/recipe-list.component';
@@ -11,7 +10,7 @@ import { RecipeItemComponent } from '@app/features/recipes/recipe-item/recipe-it
 
 const COMPONENTS = [RecipeHomeComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent];
 const PROVIDERS = [];
-const MODULES = [CommonModule, MatCardModule, MatIconModule];
+const MODULES = [CommonModule, MatButtonModule, MatCardModule, MatDividerModule, MatIconModule, MatMenuModule];
 
 @NgModule({
   imports: [MODULES],
