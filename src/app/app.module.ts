@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { LayoutModule } from '@angular/cdk/layout';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { ConfigsModule } from '@app/configs';
-import { AppRoutingModule } from './app-routing.module';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    LayoutModule,
     AppRoutingModule,
 
     // core, shared, and configs
