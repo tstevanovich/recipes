@@ -1,6 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@import '/theme.scss';
 body {
   margin: 0;
   padding: 0;
+}
+
+#columns {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* Content Before
+--------------------------------------------- */
+
+#content {
+  float: left;
+  padding: 3%;
+  width: 64%;
+}
+
+/* Content After
+--------------------------------------------- */
+
+#columns>#content {
+  padding: 3%;
+  width: 64%;
+}
+
+/* Sidebar Before
+--------------------------------------------- */
+
+#sidebar {
+  float: right;
+  padding: 3%;
+  width: 24%;
+}
+
+/* Sidebar After
+--------------------------------------------- */
+
+#columns>#sidebar {
+  padding: 3%;
+  width: 24%;
+}
+
+// Mobile
+@media all and (max-width: 768px) {
+  #columns {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+  }
+  #columns>#content {
+    width: 94%;
+    padding: 3%;
+  }
+  #columns>#sidebar {
+    width: 94%;
+    padding: 3%;
+  }
+}
+
+// Material Overides
+.mat-tab-label {
+  opacity: 1.0 !important;
+  color: #fff;
+}
+
+.mat-tab-group.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus,
+.mat-tab-group.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus,
+.mat-tab-nav-bar.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus,
+.mat-tab-nav-bar.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus {
+  color: #fff;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background: $accent;
 }

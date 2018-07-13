@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { SharedModule } from '../shared';
+const COMPONENTS = [];
+const PROVIDERS = [];
+const MODULES = [CommonModule];
 
 @NgModule({
-  imports: [SharedModule],
-  declarations: []
+  imports: [MODULES],
+  declarations: [COMPONENTS],
+  providers: [PROVIDERS],
+  exports: [MODULES, COMPONENTS]
 })
 export class ConfigsModule {}
