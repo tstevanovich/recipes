@@ -70,17 +70,17 @@ mat-icon {
 // Material Overides
 .mat-tab-label {
   opacity: 1.0 !important;
-  color: #fff;
+  color: $primary-color-text;
 }
 
 .mat-tab-group.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus,
 .mat-tab-group.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus,
 .mat-tab-nav-bar.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus,
 .mat-tab-nav-bar.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus {
-  color: #fff;
+  color: $primary-color-text;
 }
 
 .mat-tab-group.mat-primary .mat-ink-bar,
 .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-  background: $accent;
+  background: $accent-color;
 }

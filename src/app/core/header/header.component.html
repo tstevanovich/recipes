@@ -1,10 +1,18 @@
 <mat-toolbar color="primary">
-  <span>Recipe Book</span>
+  <a href="#">Recipe Book</a>
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
   <mat-tab-group>
-    <mat-tab label="First"></mat-tab>
-    <mat-tab label="Second"></mat-tab>
-    <mat-tab label="Third"></mat-tab>
+    <mat-tab label="Recipes"></mat-tab>
+    <mat-icon>list</mat-icon>
+    <mat-tab label="Shopping List"></mat-tab>
   </mat-tab-group>
+  <button mat-button [matMenuTriggerFor]="menu">
+    Manage
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Save Data</button>
+    <button mat-menu-item>Fetch Data</button>
+  </mat-menu>
 </mat-toolbar>
