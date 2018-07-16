@@ -1,13 +1,8 @@
 @import '../../../../theme.scss';
-h1 {
-  display: inline;
-}
-.maxheight60 {
-  max-height: 60px;
-}
 a {
   color: $primary-text-color;
 }
+
 .parent {
   border: 1px solid $secondary-text-color;
 }
