@@ -6,9 +6,16 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form>
-      <label for="name">Name </label>
-      <input type="text" id="name" class="form-control">
+    <form class="shopping-form">
+      <mat-form-field class="shopping-full-width">
+        <input type="text" matInput placeholder="Name">
+      </mat-form-field>
+      <mat-form-field class="shopping-full-width">
+        <input type="number" matInput placeholder="Amount">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Add</button>
+      <button mat-raised-button color="warn" type="button">Delete</button>
+      <button mat-raised-button color="accent" type="button">Clear</button>
     </form>
   </mat-card-content>
 </mat-card>
