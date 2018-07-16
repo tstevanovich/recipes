@@ -5,14 +5,14 @@ $primary-color-dark: #303F9F;
 $primary-color: #3F51B5;
 $primary-color-light: #C5CAE9;
 $primary-color-text: #FFFFFF;
-$accent-color: #FF4081;
+$accent-color: #8BC34A;
 $primary-text-color: #212121;
 $secondary-text-color: #757575;
 $divider-color: #BDBDBD;
 $warn-color: red;
 // Create Theme
 $app-primary: mat-palette($mat-indigo);
-$app-accent: mat-palette($mat-pink);
+$app-accent: mat-palette($mat-light-green);
 $app-warn: mat-palette($mat-red);
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 @include angular-material-theme($app-theme);

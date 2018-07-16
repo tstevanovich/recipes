@@ -1,12 +1,23 @@
 <mat-toolbar color="primary">
   <a href="#">Recipe Book</a>
   <mat-tab-group>
-    <mat-tab label="Recipes"></mat-tab>
-    <mat-icon>list</mat-icon>
-    <mat-tab label="Shopping List"></mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div (click)="onSelect('recipes')">
+          <span>Recipes</span>
+        </div>
+      </ng-template>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div (click)="onSelect('shopping-list')">
+          <span>Shopping List</span>
+        </div>
+      </ng-template>
+    </mat-tab>
   </mat-tab-group>
   <!-- This fills the remaining space of the current row -->
-  <span class="example-fill-remaining-space"></span>
+  <span class="fill-remaining-space"></span>
   <button mat-button [matMenuTriggerFor]="menu">
     Manage
     <mat-icon>arrow_drop_down</mat-icon>
