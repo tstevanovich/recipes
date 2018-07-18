@@ -6,22 +6,26 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p>
-      <img src="https://www.seriouseats.com/images/2015/09/20150914-pressure-cooker-recipes-roundup-09.jpg" alt="recipe" style="max-width:400px;">
-    </p>
-    <h3>Recipe Name</h3>
-    <p>
-      <button mat-raised-button [matMenuTriggerFor]="recipeMenu" color="primary">
-        Manage Recipe
-        <mat-icon>arrow_drop_down</mat-icon>
-      </button>
-      <mat-menu #recipeMenu="matMenu">
-        <button mat-menu-item>To Shopping List</button>
-        <button mat-menu-item>Edit Recipe</button>
-        <button mat-menu-item>Delete Recipe</button>
-      </mat-menu>
-    </p>
-    <p>Description</p>
-    <p>Ingredients</p>
+    <p *ngIf="!recipe; else recipeDetail">Please select a Recipe!</p>
+    <ng-template #recipeDetail>
+      <p>
+        <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" style="max-width:400px;">
+      </p>
+      <h3>{{recipe.name}}</h3>
+      <p>
+        <button mat-raised-button [matMenuTriggerFor]="recipeMenu" color="primary">
+          Manage Recipe
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #recipeMenu="matMenu">
+          <button mat-menu-item>To Shopping List</button>
+          <button mat-menu-item>Edit Recipe</button>
+          <button mat-menu-item>Delete Recipe</button>
+        </mat-menu>
+      </p>
+      <p>{{recipe.description}}</p>
+      <p>Ingredients</p>
+    </ng-template>
+
   </mat-card-content>
 </mat-card>
