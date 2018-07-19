@@ -8,12 +8,12 @@
   <mat-card-content>
     <form class="shopping-form">
       <mat-form-field class="shopping-full-width">
-        <input type="text" matInput placeholder="Name">
+        <input type="text" matInput placeholder="Name" #nameInput>
       </mat-form-field>
       <mat-form-field class="shopping-full-width">
-        <input type="number" matInput placeholder="Amount">
+        <input type="number" matInput placeholder="Amount" #amountInput>
       </mat-form-field>
-      <button mat-raised-button color="primary" type="submit">Add</button>
+      <button mat-raised-button color="primary" type="button" (click)="onAddItem()">Add</button>
       <button mat-raised-button color="warn" type="button">Delete</button>
       <button mat-raised-button color="accent" type="button">Clear</button>
     </form>
