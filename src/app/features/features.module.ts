@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { RecipesModule } from '@app/features/recipes/recipes.module';
 import { ShoppingListModule } from '@app/features/shopping-list/shopping-list.module';
+import { ShoppingListService } from '@app/features/shopping-list/shopping-list.service';
 
 const COMPONENTS = [];
-const PROVIDERS = [];
+const PROVIDERS = [ShoppingListService];
 const MODULES = [CommonModule, RecipesModule, ShoppingListModule];
 
 @NgModule({
