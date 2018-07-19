@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { Ingredient } from '@app/shared/models/ingredient.model';
 
 @Injectable({
@@ -15,5 +16,9 @@ export class ShoppingListService {
 
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
+  }
+
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients);
   }
 }
