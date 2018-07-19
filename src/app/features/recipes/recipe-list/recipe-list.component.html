@@ -9,6 +9,6 @@
     <p style="text-align:center;">
       <button mat-raised-button color="primary">New Recipe</button>
     </p>
-    <app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe" (recipeSelected)="onRecipeSelected(recipe)"></app-recipe-item>
+    <app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe"></app-recipe-item>
   </mat-card-content>
 </mat-card>
