@@ -6,31 +6,29 @@ body {
   padding: 0;
 }
 
-// Columns
-.items {
-  display: flex;
-  flex-wrap: wrap;
+.spacer {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
 }
 
-.items .item {
-  flex: 1 0 calc(25% - 10px);
-  box-sizing: border-box;
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  float: left;
+  width: 50%;
   padding: 10px;
-}
-
-// Response columns
-.resitems {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -10px;
-  margin-top: -10px;
-}
-
-.resitems .resitem {
-  flex: 1 0 200px;
   box-sizing: border-box;
-  padding: 10px;
-  margin-top: 10px;
+}
+
+.columnfull {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 // Material Overides
@@ -48,32 +46,19 @@ mat-card-header {
 mat-card-title {
   padding: 10px 10px 10px 0;
 }
-
 mat-card-content {
   padding: 10px;
 }
-
 mat-icon {
   margin-right: 10px;
 }
-
+.mat-menu-content {
+  mat-icon {
+    position: relative;
+    top: 2px;
+    left: 4px;
+  }
+}
 .mat-card-header {
   width: 100%;
-}
-
-.mat-tab-label {
-  opacity: 1 !important;
-  color: $primary-color-text;
-}
-
-.mat-tab-group.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus,
-.mat-tab-group.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus,
-.mat-tab-nav-bar.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus,
-.mat-tab-nav-bar.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus {
-  color: $primary-color-text;
-}
-
-.mat-tab-group.mat-primary .mat-ink-bar,
-.mat-tab-nav-bar.mat-primary .mat-ink-bar {
-  background: $accent-color;
 }

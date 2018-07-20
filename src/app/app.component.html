@@ -1,3 +1,43 @@
-<app-header (featureSelected)="onNavigate($event)"></app-header>
-<app-recipe-home *ngIf="loadedFeature === 'recipes'"></app-recipe-home>
-<app-shopping-list-home *ngIf="loadedFeature !== 'recipes'"></app-shopping-list-home>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="push">
+    <div class="branding">
+      <img [src]="logo" />
+      <span>Recipe Book</span>
+    </div>
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let nav of navigation" (click)="sidenav.close()" [routerLink]="[nav.link]" routerLinkActive="active">
+        {{nav.label}}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <mat-toolbar color="primary">
+      <button mat-icon-button *ngIf="(isHandset$ | async)" (click)="sidenav.open()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span routerLink="" [ngClass]="{'center': (isHandset$ | async)}" class="branding spacer">
+        <img [src]="logo" />
+        <h1>Recipe Book</h1>
+      </span>
+      <span *ngIf="!(isHandset$ | async)">
+        <button mat-button class="nav-button" *ngFor="let nav of navigation" [routerLink]="[nav.link]" routerLinkActive="active">
+          {{nav.label}}
+        </button>
+      </span>
+      <button mat-button [matMenuTriggerFor]="menu">
+        Manage
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Save Data</button>
+        <button mat-menu-item>Fetch Data</button>
+      </mat-menu>
+    </mat-toolbar>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

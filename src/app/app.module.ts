@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { LayoutModule } from '@angular/cdk/layout';
 
 import { AppRoutingModule } from '@app/app-routing.module';
 import { CoreModule } from '@app/core/core.module';
@@ -15,6 +16,7 @@ const PROVIDERS = [];
 const MODULES = [
   BrowserAnimationsModule,
   BrowserModule,
+  LayoutModule,
   AppRoutingModule,
   CoreModule,
   SharedModule,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -39,13 +40,12 @@ import {
   MatTreeModule
 } from '@angular/material';
 
-import { HeaderComponent } from '@app/core/header/header.component';
-
-const COMPONENTS = [HeaderComponent];
+const COMPONENTS = [];
 const PROVIDERS = [];
 const MODULES = [
   CommonModule,
   FormsModule,
+  RouterModule,
   MatAutocompleteModule,
   MatBadgeModule,
   MatBottomSheetModule,

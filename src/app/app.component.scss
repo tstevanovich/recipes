@@ -1,3 +1,82 @@
+@import '../theme.scss';
+
 mat-sidenav-container {
   height: 100%;
+  width: 100%;
+
+  mat-toolbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+
+    .nav-button {
+      margin-right: 10px;
+    }
+
+    mat-icon {
+      font-size: 24px;
+    }
+
+    .branding {
+      cursor: pointer;
+      // padding-top: 4px;
+
+      &.center {
+        text-align: center;
+      }
+      h1 {
+        display: inline;
+      }
+    }
+
+    img {
+      position: relative;
+      max-height: 30px;
+      margin: 0 10px 0 0;
+      vertical-align: middle;
+    }
+  }
+
+  .spacer {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+  .content {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+mat-sidenav {
+  width: 250px;
+
+  .branding {
+    height: 64px;
+    padding: 8px 10px;
+    font-size: 20px;
+    font-weight: 500;
+
+    img {
+      height: 48px;
+      margin: 2px 10px 0 0;
+    }
+
+    span {
+      position: relative;
+      top: 3px;
+    }
+  }
+
+  .mat-nav-list {
+    padding-top: 0;
+  }
 }
