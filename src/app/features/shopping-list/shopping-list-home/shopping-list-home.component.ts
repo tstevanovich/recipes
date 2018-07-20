@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Ingredient } from '@app/shared/models/ingredient.model';
 import { ShoppingListService } from '@app/features/shopping-list/shopping-list.service';
@@ -10,8 +13,11 @@ import { ShoppingListService } from '@app/features/shopping-list/shopping-list.s
 })
 export class ShoppingListHomeComponent implements OnInit {
   ingredients: Ingredient[];
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(map(result => result.matches));
 
-  constructor(private shoppingListService: ShoppingListService) {}
+  constructor(private breakpointObserver: BreakpointObserver, private shoppingListService: ShoppingListService) {}
 
   ngOnInit() {
     this.ingredients = this.shoppingListService.getIngredients();
