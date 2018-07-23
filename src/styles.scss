@@ -19,6 +19,7 @@ body {
 }
 
 /* Create two equal columns that sits next to each other */
+
 .column {
   float: left;
   width: 50%;
@@ -46,12 +47,15 @@ mat-card-header {
 mat-card-title {
   padding: 10px 10px 10px 0;
 }
+
 mat-card-content {
   padding: 10px;
 }
+
 mat-icon {
   margin-right: 10px;
 }
+
 .mat-menu-content {
   mat-icon {
     position: relative;
@@ -59,6 +63,7 @@ mat-icon {
     left: 4px;
   }
 }
+
 .mat-card-header {
   width: 100%;
 }

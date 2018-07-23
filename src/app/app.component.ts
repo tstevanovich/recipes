@@ -11,9 +11,12 @@ import { map } from 'rxjs/operators';
 export class AppComponent implements OnInit {
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe([Breakpoints.Handset])
-    .pipe(map(result => result.matches));
+    .pipe(map((result) => result.matches));
   logo = '/assets/logo.png';
-  navigation = [{ link: 'recipes', label: 'Recipes' }, { link: 'shopping-list', label: 'Shopping List' }];
+  navigation = [
+    { link: 'recipes', label: 'Recipes' },
+    { link: 'shopping-list', label: 'Shopping List' }
+  ];
 
   constructor(public breakpointObserver: BreakpointObserver) {}
 

@@ -1,25 +1,19 @@
 @import '../theme.scss';
-
 mat-sidenav-container {
   height: 100%;
   width: 100%;
-
   mat-toolbar {
     position: fixed;
     width: 100%;
     display: flex;
-
     .nav-button {
       margin-right: 10px;
     }
-
     mat-icon {
       font-size: 24px;
     }
-
     .branding {
       cursor: pointer;
-
       &.center {
         text-align: center;
       }
@@ -27,7 +21,6 @@ mat-sidenav-container {
         display: inline;
       }
     }
-
     img {
       position: relative;
       max-height: 30px;
@@ -35,13 +28,11 @@ mat-sidenav-container {
       vertical-align: middle;
     }
   }
-
   .spacer {
     /* This fills the remaining space, by using flexbox. 
        Every toolbar row uses a flexbox row layout. */
     flex: 1 1 auto;
   }
-
   .content {
     position: absolute;
     top: 64px;
@@ -57,24 +48,20 @@ mat-sidenav-container {
 
 mat-sidenav {
   width: 250px;
-
   .branding {
     height: 64px;
     padding: 8px 10px;
     font-size: 20px;
     font-weight: 500;
-
     img {
       height: 48px;
       margin: 2px 10px 0 0;
     }
-
     span {
       position: relative;
       top: 3px;
     }
   }
-
   .mat-nav-list {
     padding-top: 0;
   }

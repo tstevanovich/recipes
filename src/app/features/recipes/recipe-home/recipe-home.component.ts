@@ -15,9 +15,12 @@ export class RecipeHomeComponent implements OnInit {
   selectedRecipe: Recipe;
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
-    .pipe(map(result => result.matches));
+    .pipe(map((result) => result.matches));
 
-  constructor(private breakpointObserver: BreakpointObserver, private recipeService: RecipeService) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private recipeService: RecipeService
+  ) {}
 
   ngOnInit() {
     this.recipeService.recipeSelected.subscribe((recipe: Recipe) => {
