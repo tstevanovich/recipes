@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RecipeItemComponent } from '@app/features/recipes/recipe-item/recipe-item.component';
 
 describe('RecipeItemComponent', () => {

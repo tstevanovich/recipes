@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Ingredient } from '@app/shared/models/ingredient.model';
 
 @Injectable({

@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
   MatCardModule,
@@ -9,9 +8,8 @@ import {
   MatInputModule,
   MatMenuModule
 } from '@angular/material';
-
-import { ShoppingListHomeComponent } from '@app/features/shopping-list/shopping-list-home/shopping-list-home.component';
 import { ShoppingEditComponent } from '@app/features/shopping-list/shopping-edit/shopping-edit.component';
+import { ShoppingListHomeComponent } from '@app/features/shopping-list/shopping-list-home/shopping-list-home.component';
 
 const COMPONENTS = [ShoppingListHomeComponent, ShoppingEditComponent];
 const PROVIDERS = [];

@@ -1,10 +1,9 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { RecipeService } from '@app/features/recipes/recipe.service';
+import { Recipe } from '@app/shared/models/recipe.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-import { Recipe } from '@app/shared/models/recipe.model';
-import { RecipeService } from '@app/features/recipes/recipe.service';
 
 @Component({
   selector: 'app-recipe-home',

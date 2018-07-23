@@ -1,10 +1,9 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { ShoppingListService } from '@app/features/shopping-list/shopping-list.service';
+import { Ingredient } from '@app/shared/models/ingredient.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-import { Ingredient } from '@app/shared/models/ingredient.model';
-import { ShoppingListService } from '@app/features/shopping-list/shopping-list.service';
 
 @Component({
   selector: 'app-shopping-list-home',

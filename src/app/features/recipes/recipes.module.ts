@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
   MatCardModule,
@@ -8,13 +7,11 @@ import {
   MatIconModule,
   MatMenuModule
 } from '@angular/material';
-
-import { RecipeService } from './recipe.service';
-
-import { RecipeHomeComponent } from '@app/features/recipes/recipe-home/recipe-home.component';
-import { RecipeListComponent } from '@app/features/recipes/recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from '@app/features/recipes/recipe-detail/recipe-detail.component';
+import { RecipeHomeComponent } from '@app/features/recipes/recipe-home/recipe-home.component';
 import { RecipeItemComponent } from '@app/features/recipes/recipe-item/recipe-item.component';
+import { RecipeListComponent } from '@app/features/recipes/recipe-list/recipe-list.component';
+import { RecipeService } from './recipe.service';
 
 const COMPONENTS = [
   RecipeHomeComponent,

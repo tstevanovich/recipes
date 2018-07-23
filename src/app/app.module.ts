@@ -1,15 +1,13 @@
+import { LayoutModule } from '@angular/cdk/layout';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { LayoutModule } from '@angular/cdk/layout';
-
 import { AppRoutingModule } from '@app/app-routing.module';
-import { CoreModule } from '@app/core/core.module';
-import { SharedModule } from '@app/shared/shared.module';
-import { ConfigsModule } from '@app/configs/configs.module';
-import { FeaturesModule } from '@app/features/features.module';
-
 import { AppComponent } from '@app/app.component';
+import { ConfigsModule } from '@app/configs/configs.module';
+import { CoreModule } from '@app/core/core.module';
+import { FeaturesModule } from '@app/features/features.module';
+import { SharedModule } from '@app/shared/shared.module';
 
 const COMPONENTS = [AppComponent];
 const PROVIDERS = [];

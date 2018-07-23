@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgModule } from '@angular/core';
 import { RecipesModule } from '@app/features/recipes/recipes.module';
 import { ShoppingListModule } from '@app/features/shopping-list/shopping-list.module';
 import { ShoppingListService } from '@app/features/shopping-list/shopping-list.service';

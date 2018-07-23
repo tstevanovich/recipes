@@ -1,8 +1,7 @@
-import { Injectable, EventEmitter } from '@angular/core';
-
-import { Recipe } from '@app/shared/models/recipe.model';
-import { Ingredient } from '@app/shared/models/ingredient.model';
+import { EventEmitter, Injectable } from '@angular/core';
 import { ShoppingListService } from '@app/features/shopping-list/shopping-list.service';
+import { Ingredient } from '@app/shared/models/ingredient.model';
+import { Recipe } from '@app/shared/models/recipe.model';
 
 @Injectable({
   providedIn: 'root'
