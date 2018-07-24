@@ -3,3 +3,8 @@
   border: 1px solid $secondary-text-color;
   padding: 10px;
 }
+
+.active {
+  background: $accent-color;
+  color: $primary-color-text;
+}
