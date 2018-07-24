@@ -15,10 +15,11 @@ const MODULES = [
   BrowserAnimationsModule,
   BrowserModule,
   LayoutModule,
+  AppRoutingModule,
   CoreModule,
   SharedModule,
   ConfigsModule,
-  FeaturesModule
+  FeaturesModule,
   AppRoutingModule
 ];
 
