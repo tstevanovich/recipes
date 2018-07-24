@@ -15,11 +15,11 @@ const MODULES = [
   BrowserAnimationsModule,
   BrowserModule,
   LayoutModule,
-  AppRoutingModule,
   CoreModule,
   SharedModule,
   ConfigsModule,
   FeaturesModule
+  AppRoutingModule
 ];
 
 @NgModule({

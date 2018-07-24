@@ -7,10 +7,11 @@ import {
   MatIconModule,
   MatMenuModule
 } from '@angular/material';
-import { RecipeDetailComponent } from '@app/features/recipes/recipe-detail/recipe-detail.component';
-import { RecipeHomeComponent } from '@app/features/recipes/recipe-home/recipe-home.component';
-import { RecipeItemComponent } from '@app/features/recipes/recipe-item/recipe-item.component';
-import { RecipeListComponent } from '@app/features/recipes/recipe-list/recipe-list.component';
+import { RecipesRoutingModule } from '@app/features/recipes/recipes-routing.module';
+import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { RecipeHomeComponent } from './recipe-home/recipe-home.component';
+import { RecipeItemComponent } from './recipe-item/recipe-item.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeService } from './recipe.service';
 
 const COMPONENTS = [
@@ -26,13 +27,13 @@ const MODULES = [
   MatCardModule,
   MatDividerModule,
   MatIconModule,
-  MatMenuModule
+  MatMenuModule,
+  RecipesRoutingModule
 ];
 
 @NgModule({
   imports: [MODULES],
   declarations: [COMPONENTS],
-  providers: [PROVIDERS],
-  exports: [MODULES, COMPONENTS]
+  providers: [PROVIDERS]
 })
 export class RecipesModule {}

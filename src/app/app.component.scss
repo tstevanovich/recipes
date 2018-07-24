@@ -6,6 +6,10 @@ mat-sidenav-container {
     position: fixed;
     width: 100%;
     display: flex;
+    a {
+      text-decoration: none;
+      color: $primary-color-text;
+    }
     .nav-button {
       margin-right: 10px;
     }
@@ -44,6 +48,9 @@ mat-sidenav-container {
     overflow-y: auto;
     overflow-x: hidden;
   }
+  .active {
+    background: $accent-color;
+  }
 }
 
 mat-sidenav {
@@ -59,10 +66,13 @@ mat-sidenav {
     }
     span {
       position: relative;
-      top: 3px;
+      top: -18px;
     }
   }
   .mat-nav-list {
     padding-top: 0;
+    a.active {
+      background: $accent-color;
+    }
   }
 }

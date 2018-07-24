@@ -3,9 +3,6 @@
     <app-recipe-list></app-recipe-list>
   </div>
   <div [ngClass]="(isHandset$ | async) ? 'columnfull' : 'column'">
-    <app-recipe-detail *ngIf="selectedRecipe; else noRecipe" [recipe]="selectedRecipe"></app-recipe-detail>
-    <ng-template #noRecipe>
-      <app-recipe-detail></app-recipe-detail>
-    </ng-template>
+    <router-outlet></router-outlet>
   </div>
 </div>

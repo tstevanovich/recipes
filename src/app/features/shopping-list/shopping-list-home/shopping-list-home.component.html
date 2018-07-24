@@ -1,8 +1,5 @@
 <div class="row">
   <div [ngClass]="(isHandset$ | async) ? 'columnfull' : 'column'">
-    <app-shopping-edit></app-shopping-edit>
-  </div>
-  <div [ngClass]="(isHandset$ | async) ? 'columnfull' : 'column'">
     <mat-card>
       <mat-card-header>
         <mat-card-title>
@@ -18,5 +15,8 @@
         </ul>
       </mat-card-content>
     </mat-card>
+  </div>
+  <div [ngClass]="(isHandset$ | async) ? 'columnfull' : 'column'">
+    <app-shopping-edit></app-shopping-edit>
   </div>
 </div>
