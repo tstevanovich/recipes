@@ -2,11 +2,11 @@
   <mat-card-header>
     <mat-card-title>
       <mat-icon>add_shopping_cart</mat-icon>
-      <h2 style="display:inline;">Edit List</h2>
+      <h2>Edit List</h2>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form novalidate [formGroup]="shoppingEditForm" class="shopping-form" (ngSubmit)="onAddItem()">
+    <form novalidate [formGroup]="shoppingEditForm" #formDirective="ngForm" class="shopping-form" (ngSubmit)="onSubmit(formDirective)">
       <mat-form-field class="shopping-full-width">
         <input type="text" matInput placeholder="Name" formControlName="name">
         <mat-error *ngIf="f.name.errors?.required">Please enter ingredient name</mat-error>
@@ -16,9 +16,9 @@
         <mat-error *ngIf="f.amount.errors?.required">Please enter amount of ingredient</mat-error>
         <mat-error *ngIf="f.amount.errors?.pattern">Please enter amount greater than 0</mat-error>
       </mat-form-field>
-      <button mat-raised-button color="primary" [disabled]="this.shoppingEditForm.invalid" type="submit">Add</button>
-      <button mat-raised-button color="warn" type="button">Delete</button>
-      <button mat-raised-button color="accent" type="button">Clear</button>
+      <button mat-raised-button color="primary" [disabled]="this.shoppingEditForm.invalid" type="submit">{{editMode ? 'Update' : 'Add'}}</button>
+      <button mat-raised-button color="warn" *ngIf="editMode" type="button" (click)="onDelete()">Delete</button>
+      <button mat-raised-button color="accent" [disabled]="!this.shoppingEditForm.dirty && !this.editMode" type="reset" (click)="onClear()">Clear</button>
     </form>
   </mat-card-content>
 </mat-card>

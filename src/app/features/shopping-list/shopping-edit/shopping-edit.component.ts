@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { ShoppingListService } from '@app/features/shopping-list/shopping-list.service';
 import { Ingredient } from '@app/shared/models/ingredient.model';
 import { Subscription } from 'rxjs';
@@ -19,24 +19,28 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   constructor(private shoppingListService: ShoppingListService, private fb: FormBuilder) {}
 
   ngOnInit() {
+    // creates subscription if form goes into editing state
     this.subscription = this.shoppingListService.startedEditing.subscribe((index: number) => {
       this.editedItemIndex = index;
       this.editMode = true;
       this.editedItem = this.shoppingListService.getIngredient(index);
+      // update form values
       this.shoppingEditForm.setValue({
         name: this.editedItem.name,
         amount: this.editedItem.amount
       });
     });
 
+    // build form and set validation
     this.shoppingEditForm = this.fb.group({
       name: ['', Validators.required],
-      // Validate amount is greater than 0
+      // validate amount is greater than 0
       amount: ['', [Validators.required, Validators.pattern('^[1-9]+[0-9]*$')]]
     });
   }
 
   ngOnDestroy() {
+    // destory subscriptions
     this.subscription.unsubscribe();
   }
 
@@ -45,12 +49,33 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     return this.shoppingEditForm.controls;
   }
 
-  onAddItem() {
+  onSubmit(formDirective: FormGroupDirective): void {
     // stop here if form is invalid
     if (this.shoppingEditForm.invalid) {
       return;
     }
+    // get form values
     const newIngredient = new Ingredient(this.f.name.value, this.f.amount.value);
-    this.shoppingListService.addIngredient(newIngredient);
+    if (this.editMode) {
+      // edit ingredient
+      this.shoppingListService.updateIngredient(this.editedItemIndex, newIngredient);
+    } else {
+      // add ingredient
+      this.shoppingListService.addIngredient(newIngredient);
+    }
+    // reset form value in untouched and not edit state
+    this.editMode = false;
+    formDirective.resetForm();
+    this.shoppingEditForm.reset();
+  }
+
+  onClear() {
+    this.shoppingEditForm.reset();
+    this.editMode = false;
+  }
+
+  onDelete() {
+    this.shoppingListService.deleteIngredient(this.editedItemIndex);
+    this.onClear();
   }
 }
