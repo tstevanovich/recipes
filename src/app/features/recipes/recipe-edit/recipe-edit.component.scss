@@ -1,0 +1,32 @@
+.recipe-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.recipe-full-width {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.ingredients {
+  display: flex;
+  mat-form-field {
+    margin-bottom: 10px;
+  }
+  .ingredient {
+    flex: 1;
+    padding-right: 40px;
+    text-align: left;
+  }
+}
+
+form {
+  img {
+    width: 100%;
+  }
+}

@@ -38,6 +38,7 @@ mat-card {
   margin: 10px !important;
   h2 {
     display: inline;
+    vertical-align: bottom;
   }
 }
 
@@ -57,14 +58,7 @@ mat-card-content {
 
 mat-icon {
   margin: 0 10px 0 0;
-}
-
-.mat-menu-content {
-  mat-icon {
-    position: relative;
-    top: 2px;
-    left: 4px;
-  }
+  vertical-align: middle;
 }
 
 .mat-card-header {

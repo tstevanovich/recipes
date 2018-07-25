@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatCardModule,
   MatDividerModule,
   MatIconModule,
+  MatInputModule,
   MatMenuModule
 } from '@angular/material';
 import { RecipesRoutingModule } from '@app/features/recipes/recipes-routing.module';
@@ -25,10 +27,12 @@ const COMPONENTS = [
 const PROVIDERS = [RecipeService];
 const MODULES = [
   CommonModule,
+  ReactiveFormsModule,
   MatButtonModule,
   MatCardModule,
   MatDividerModule,
   MatIconModule,
+  MatInputModule,
   MatMenuModule,
   RecipesRoutingModule
 ];
@@ -36,6 +40,7 @@ const MODULES = [
 @NgModule({
   imports: [MODULES],
   declarations: [COMPONENTS],
-  providers: [PROVIDERS]
+  providers: [PROVIDERS],
+  exports: [MODULES, COMPONENTS]
 })
 export class RecipesModule {}

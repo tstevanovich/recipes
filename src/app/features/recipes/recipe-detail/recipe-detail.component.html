@@ -9,7 +9,7 @@
     <p *ngIf="!recipe; else recipeDetail">Please select a Recipe!</p>
     <ng-template #recipeDetail>
       <p>
-        <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" style="max-width:400px;">
+        <img src="{{recipe.imagePath}}" alt="{{recipe.name}}">
       </p>
       <h3>{{recipe.name}}</h3>
       <p>
@@ -20,7 +20,7 @@
         <mat-menu #recipeMenu="matMenu">
           <button mat-menu-item (click)="onAddToShoppingList()">To Shopping List</button>
           <button mat-menu-item routerLink="edit">Edit Recipe</button>
-          <button mat-menu-item>Delete Recipe</button>
+          <button mat-menu-item (click)="onDeleteRecipe()">Delete Recipe</button>
         </mat-menu>
       </p>
       <p>{{recipe.description}}</p>
