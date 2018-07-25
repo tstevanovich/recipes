@@ -50,6 +50,7 @@ mat-sidenav-container {
   }
   .active {
     background: $accent-color;
+    color: $primary-color-text;
   }
 }
 
@@ -73,6 +74,7 @@ mat-sidenav {
     padding-top: 0;
     a.active {
       background: $accent-color;
+      color: $primary-color-text;
     }
   }
 }

@@ -9,8 +9,8 @@
       </mat-card-header>
       <mat-card-content>
         <ul>
-          <li *ngFor="let ingredient of ingredients">
-            <a href="#">{{ingredient.name}} ({{ingredient.amount}})</a>
+          <li *ngFor="let ingredient of ingredients; let i = index" (click)="onEditItem(i)" style="cursor: pointer;">
+            {{ingredient.name}} ({{ingredient.amount}})
           </li>
         </ul>
       </mat-card-content>

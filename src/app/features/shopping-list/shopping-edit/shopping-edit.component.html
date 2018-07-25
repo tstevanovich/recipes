@@ -6,14 +6,17 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form class="shopping-form">
+    <form novalidate [formGroup]="shoppingEditForm" class="shopping-form" (ngSubmit)="onAddItem()">
       <mat-form-field class="shopping-full-width">
-        <input type="text" matInput placeholder="Name" #nameInput>
+        <input type="text" matInput placeholder="Name" formControlName="name">
+        <mat-error *ngIf="f.name.errors?.required">Please enter ingredient name</mat-error>
       </mat-form-field>
       <mat-form-field class="shopping-full-width">
-        <input type="number" matInput placeholder="Amount" #amountInput>
+        <input type="number" matInput placeholder="Amount" formControlName="amount">
+        <mat-error *ngIf="f.amount.errors?.required">Please enter amount of ingredient</mat-error>
+        <mat-error *ngIf="f.amount.errors?.pattern">Please enter amount greater than 0</mat-error>
       </mat-form-field>
-      <button mat-raised-button color="primary" type="button" (click)="onAddItem()">Add</button>
+      <button mat-raised-button color="primary" [disabled]="this.shoppingEditForm.invalid" type="submit">Add</button>
       <button mat-raised-button color="warn" type="button">Delete</button>
       <button mat-raised-button color="accent" type="button">Clear</button>
     </form>
