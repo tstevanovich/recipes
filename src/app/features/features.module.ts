@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { SigninModule } from '@app/features/signin/signin.module';
+import { SignupModule } from '@app/features/signup/signup.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { SignupComponent } from './signup/signup.component';
-import { SigninComponent } from './signin/signin.component';
 
 const COMPONENTS = [];
 const PROVIDERS = [ShoppingListService];
-const MODULES = [CommonModule, RecipesModule, ShoppingListModule, SignupComponent];
+const MODULES = [CommonModule, RecipesModule, ShoppingListModule, SignupModule, SigninModule];
 
 @NgModule({
   imports: [MODULES],
-  declarations: [COMPONENTS, SigninComponent],
+  declarations: [COMPONENTS],
   providers: [PROVIDERS]
 })
 export class FeaturesModule {}

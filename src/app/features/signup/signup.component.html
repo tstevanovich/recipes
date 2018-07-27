@@ -1,3 +1,22 @@
-<p>
-  signup works!
-</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <mat-icon>how_to_reg</mat-icon>
+      <h2>Sign Up</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form novalidate [formGroup]="signupForm" class="signup-form" (ngSubmit)="onSignup()">
+      <mat-form-field class="signup-full-width">
+        <input type="email" matInput placeholder="Email" formControlName="email">
+
+      </mat-form-field>
+      <mat-form-field class="signup-full-width">
+        <input type="password" matInput placeholder="Password" formControlName="password">
+
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Sign Up</button>
+      <button mat-raised-button color="warn" type="button">Cancel</button>
+    </form>
+  </mat-card-content>
+</mat-card>
