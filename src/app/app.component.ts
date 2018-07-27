@@ -1,5 +1,7 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { Response } from '@angular/http';
+import { DataStorageService } from '@app/shared/services/data-storage.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -18,7 +20,20 @@ export class AppComponent implements OnInit {
     { link: 'shopping-list', label: 'Shopping List' }
   ];
 
-  constructor(public breakpointObserver: BreakpointObserver) {}
+  constructor(
+    public breakpointObserver: BreakpointObserver,
+    private dataStorageService: DataStorageService
+  ) {}
 
   ngOnInit() {}
+
+  onSaveData() {
+    this.dataStorageService.storeRecipes().subscribe((response: Response) => {
+      return null;
+    });
+  }
+
+  onFetchData() {
+    this.dataStorageService.getRecipes();
+  }
 }

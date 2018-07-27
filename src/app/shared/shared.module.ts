@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -44,6 +45,7 @@ const PROVIDERS = [];
 const MODULES = [
   CommonModule,
   FormsModule,
+  HttpModule,
   MatAutocompleteModule,
   MatBadgeModule,
   MatBottomSheetModule,

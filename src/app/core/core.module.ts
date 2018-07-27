@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { DataStorageService } from '@app/shared/services/data-storage.service';
 
 const COMPONENTS = [];
-const PROVIDERS = [];
+const PROVIDERS = [DataStorageService];
 const MODULES = [CommonModule];
 
 @NgModule({
