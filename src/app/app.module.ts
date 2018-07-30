@@ -6,11 +6,12 @@ import { AppRoutingModule } from '@app/app-routing.module';
 import { AppComponent } from '@app/app.component';
 import { ConfigsModule } from '@app/configs/configs.module';
 import { CoreModule } from '@app/core/core.module';
+import { AuthGuard } from '@app/features/auth/auth-guard.service';
 import { FeaturesModule } from '@app/features/features.module';
 import { SharedModule } from '@app/shared/shared.module';
 
 const COMPONENTS = [AppComponent];
-const PROVIDERS = [];
+const PROVIDERS = [AuthGuard];
 const MODULES = [
   BrowserAnimationsModule,
   BrowserModule,

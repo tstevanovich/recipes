@@ -8,6 +8,11 @@
       <a mat-list-item *ngFor="let nav of navigation" (click)="sidenav.close()" [routerLink]="[nav.link]" routerLinkActive="active">
         {{nav.label}}
       </a>
+      <span *ngIf="!authService.isAuthenticated()">
+        <a mat-list-item *ngFor="let nav of authnavigation" (click)="sidenav.close()" [routerLink]="[nav.link]" routerLinkActive="active">
+          {{nav.label}}
+        </a>
+      </span>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -27,8 +32,16 @@
         <button mat-button class="nav-button" *ngFor="let nav of navigation" [routerLink]="[nav.link]" routerLinkActive="active">
           {{nav.label}}
         </button>
+        <span *ngIf="!authService.isAuthenticated()">
+          <button mat-button class="nav-button" *ngFor="let nav of authnavigation" [routerLink]="[nav.link]" routerLinkActive="active">
+            {{nav.label}}
+          </button>
+        </span>
       </span>
-      <button mat-button [matMenuTriggerFor]="menu">
+      <button mat-button class="nav-button" *ngIf="authService.isAuthenticated()" (click)="onLogout()">
+        Logout
+      </button>
+      <button mat-button [matMenuTriggerFor]="menu" *ngIf="authService.isAuthenticated()">
         <mat-icon aria-label="Refresh Data">refresh</mat-icon>
       </button>
       <mat-menu #menu="matMenu">

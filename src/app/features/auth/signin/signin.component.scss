@@ -1,8 +1,9 @@
-.signup-form {
+@import '../../../../theme.scss';
+.signin-form {
   width: 100%;
 }
 
-.signup-full-width {
+.signin-full-width {
   width: 100%;
   margin-bottom: 10px;
 }
@@ -12,6 +13,7 @@ mat-card {
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 400px;
 }
 
 button {

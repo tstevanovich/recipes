@@ -32,6 +32,22 @@ body {
   box-sizing: border-box;
 }
 
+// Alerts
+.alert {
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.alert-success {
+  border: 1px solid $primary-color;
+  color: $primary-color;
+}
+
+.alert-danger {
+  border: 1px solid $warn-color;
+  color: $warn-color;
+}
+
 // Material Overides
 mat-card {
   padding: 0 !important;
