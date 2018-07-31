@@ -3,10 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 import { AuthService } from '@app/shared/services/auth.service';
 import { DataStorageService } from '@app/shared/services/data-storage.service';
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+// Firebase App is always required and must be first
+var firebase = require('firebase/app');
+
+// Add additional services that you want to use
+require('firebase/auth');
 
 @Component({
   selector: 'app-root',

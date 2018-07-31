@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertService } from '@app/shared/services/alert.service';
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/messaging';
+
+// Firebase App is always required and must be first
+var firebase = require('firebase/app');
+
+// Add additional services that you want to use
+require('firebase/auth');
+require('firebase/messaging');
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +43,7 @@ export class AuthService {
             this.token = token;
           });
         this.alertService.success('Successfully signed in');
-        this.router.navigate(['/']);
+        this.router.navigate(['/recipes']);
       })
       .catch((error) => {
         this.alertService.error(error);

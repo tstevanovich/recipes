@@ -1,37 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatDividerModule,
-  MatIconModule,
-  MatInputModule,
-  MatMenuModule
-} from '@angular/material';
+import { AuthRoutingModule } from '@app/features/auth/auth-routing.module';
 import { SigninComponent } from '@app/features/auth/signin/signin.component';
 import { SignupComponent } from '@app/features/auth/signup/signup.component';
-import { AlertComponent } from '@app/shared/directives/alert.component';
-import { AlertService } from '@app/shared/services/alert.service';
-import { AuthService } from '@app/shared/services/auth.service';
+import { SharedModule } from '@app/shared/shared.module';
 
-const COMPONENTS = [AlertComponent, SigninComponent, SignupComponent];
-const PROVIDERS = [AlertService, AuthService];
-const MODULES = [
-  CommonModule,
-  ReactiveFormsModule,
-  MatButtonModule,
-  MatCardModule,
-  MatDividerModule,
-  MatIconModule,
-  MatInputModule,
-  MatMenuModule
-];
+const COMPONENTS = [SigninComponent, SignupComponent];
+const PROVIDERS = [];
+const MODULES = [CommonModule, SharedModule, AuthRoutingModule];
 
 @NgModule({
   imports: [MODULES],
   declarations: [COMPONENTS],
-  providers: [PROVIDERS],
-  exports: [MODULES, COMPONENTS]
+  providers: [PROVIDERS]
 })
 export class AuthModule {}

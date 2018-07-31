@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { AuthModule } from './auth/auth.module';
-import { RecipesModule } from './recipes/recipes.module';
-import { ShoppingListModule } from './shopping-list/shopping-list.module';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { AuthModule } from '@app/features/auth/auth.module';
+import { HomeModule } from '@app/features/home/home.module';
+import { ShoppingListModule } from '@app/features/shopping-list/shopping-list.module';
 
 const COMPONENTS = [];
-const PROVIDERS = [ShoppingListService];
-const MODULES = [CommonModule, AuthModule, RecipesModule, ShoppingListModule];
+const PROVIDERS = [];
+const MODULES = [CommonModule, AuthModule, ShoppingListModule, HomeModule];
 
 @NgModule({
   imports: [MODULES],

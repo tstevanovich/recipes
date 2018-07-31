@@ -13,6 +13,9 @@
           {{nav.label}}
         </a>
       </span>
+      <a mat-list-item class="nav-button" *ngIf="authService.isAuthenticated()" (click)="onLogout();sidenav.close()">
+        Logout
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -37,10 +40,10 @@
             {{nav.label}}
           </button>
         </span>
+        <button mat-button class="nav-button" *ngIf="authService.isAuthenticated()" (click)="onLogout()">
+          Logout
+        </button>
       </span>
-      <button mat-button class="nav-button" *ngIf="authService.isAuthenticated()" (click)="onLogout()">
-        Logout
-      </button>
       <button mat-button [matMenuTriggerFor]="menu" *ngIf="authService.isAuthenticated()">
         <mat-icon aria-label="Refresh Data">refresh</mat-icon>
       </button>

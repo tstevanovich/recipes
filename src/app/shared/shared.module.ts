@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
   MatAutocompleteModule,
@@ -39,12 +39,13 @@ import {
   MatTooltipModule,
   MatTreeModule
 } from '@angular/material';
+import { AlertComponent } from '@app/shared/directives/alert.component';
 
-const COMPONENTS = [];
+const COMPONENTS = [AlertComponent];
 const PROVIDERS = [];
 const MODULES = [
   CommonModule,
-  FormsModule,
+  ReactiveFormsModule,
   HttpModule,
   MatAutocompleteModule,
   MatBadgeModule,
