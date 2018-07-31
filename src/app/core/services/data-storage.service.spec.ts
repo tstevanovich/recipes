@@ -1,5 +1,5 @@
 import { inject, TestBed } from '@angular/core/testing';
-import { DataStorageService } from '@app/shared/services/data-storage.service';
+import { DataStorageService } from '@app/core/services/data-storage.service';
 
 describe('DataStorageService', () => {
   beforeEach(() => {

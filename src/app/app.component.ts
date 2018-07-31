@@ -1,8 +1,8 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
-import { AuthService } from '@app/shared/services/auth.service';
-import { DataStorageService } from '@app/shared/services/data-storage.service';
+import { AuthService } from '@app/core/services/auth.service';
+import { DataStorageService } from '@app/core/services/data-storage.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 

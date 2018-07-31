@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AlertService } from '@app/shared/services/alert.service';
+import { AlertService } from '@app/core/services/alert.service';
 import { Subscription } from 'rxjs';
 
 @Component({

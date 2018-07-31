@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertService } from '@app/shared/services/alert.service';
+import { AlertService } from '@app/core/services/alert.service';
 
 // Firebase App is always required and must be first
 var firebase = require('firebase/app');
