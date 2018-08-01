@@ -25,4 +25,8 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
+  isAuth() {
+    return this.authService.isAuthenticated();
+  }
 }

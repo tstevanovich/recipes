@@ -23,7 +23,7 @@
         <mat-error *ngIf="f.description.errors?.required">Please enter a description of the recipe</mat-error>
       </mat-form-field>
       <div formArrayName="ingredients">
-        <div class="ingredients" *ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index;" [formGroupName]="i">
+        <div class="ingredients" *ngFor="let ingredientCtrl of recipeForm.get('ingredients')['controls']; let i = index;" [formGroupName]="i">
           <mat-form-field class="ingredient">
             <input type="text" matInput placeholder="Ingredient" formControlName="name">
             <mat-error *ngIf="f.ingredients.controls[i].controls.name.errors?.required">Ingredient Name?</mat-error>
