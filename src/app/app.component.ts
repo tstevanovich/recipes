@@ -21,7 +21,8 @@ export class AppComponent implements OnInit {
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe([Breakpoints.Handset])
     .pipe(map((result) => result.matches));
-  logo = '/assets/logo.png';
+  logo = require('../assets/logo.png');
+
   // default navigation
   navigation = [
     { link: 'recipes', label: 'Recipes' },
