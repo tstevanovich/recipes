@@ -1,6 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { Response } from '@angular/http';
 import { AuthService } from '@app/core/services/auth.service';
 import { DataStorageService } from '@app/core/services/data-storage.service';
 import { Observable } from 'rxjs';
@@ -45,7 +44,7 @@ export class AppComponent implements OnInit {
   }
 
   onSaveData() {
-    this.dataStorageService.storeRecipes().subscribe((response: Response) => {
+    this.dataStorageService.storeRecipes().subscribe((response) => {
       return null;
     });
   }

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -46,7 +46,7 @@ const PROVIDERS = [];
 const MODULES = [
   CommonModule,
   ReactiveFormsModule,
-  HttpModule,
+  HttpClientModule,
   MatAutocompleteModule,
   MatBadgeModule,
   MatBottomSheetModule,

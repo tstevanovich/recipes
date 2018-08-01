@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { AuthInterceptor } from '@app/core/interceptors/auth.interceptor';
 import { AlertService } from '@app/core/services/alert.service';
 import { AuthGuard } from '@app/core/services/auth-guard.service';
 import { AuthService } from '@app/core/services/auth.service';
@@ -14,7 +16,8 @@ const PROVIDERS = [
   DataStorageService,
   AuthService,
   AuthGuard,
-  AlertService
+  AlertService,
+  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
 ];
 const MODULES = [CommonModule];
 
