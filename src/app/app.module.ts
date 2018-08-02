@@ -6,7 +6,9 @@ import { AppRoutingModule } from '@app/app-routing.module';
 import { AppComponent } from '@app/app.component';
 import { CoreModule } from '@app/core/core.module';
 import { FeaturesModule } from '@app/features/features.module';
+import { shoppingListReducer } from '@app/features/shopping-list/store/shopping-list.reducers';
 import { SharedModule } from '@app/shared/shared.module';
+import { StoreModule } from '@ngrx/store';
 
 const COMPONENTS = [AppComponent];
 const PROVIDERS = [];
@@ -17,6 +19,7 @@ const MODULES = [
   FeaturesModule,
   SharedModule,
   CoreModule,
+  StoreModule.forRoot({ shoppingList: shoppingListReducer }),
   AppRoutingModule
 ];
 
