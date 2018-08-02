@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AuthService } from '@app/core/services/auth.service';
 import { RecipeService } from '@app/core/services/recipe.service';
 import { Recipe } from '@app/shared/models/recipe.model';
 import { map } from 'rxjs/operators';
@@ -9,11 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DataStorageService {
-  constructor(
-    private http: HttpClient,
-    private recipeService: RecipeService,
-    private authService: AuthService
-  ) {}
+  constructor(private http: HttpClient, private recipeService: RecipeService) {}
 
   storeRecipes() {
     return this.http.put(

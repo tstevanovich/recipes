@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertService } from '@app/core/services/alert.service';
+import { DataStorageService } from '@app/core/services/data-storage.service';
 
 // Firebase App is always required and must be first
 var firebase = require('firebase/app');
@@ -15,14 +16,17 @@ require('firebase/messaging');
 export class AuthService {
   token: string;
 
-  constructor(private alertService: AlertService, private router: Router) {}
+  constructor(
+    private alertService: AlertService,
+    private router: Router,
+    private dataStorageService: DataStorageService
+  ) {}
 
   signupUser(email: string, password: string) {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((response) => {
-        console.log(response);
         this.alertService.success('User created');
       })
       .catch((error) => {
@@ -35,12 +39,12 @@ export class AuthService {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then((response) => {
-        console.log(response);
         firebase
           .auth()
           .currentUser.getIdToken()
           .then((token: string) => {
             this.token = token;
+            this.dataStorageService.getRecipes();
           });
         this.alertService.success('Successfully signed in');
         this.router.navigate(['/recipes']);

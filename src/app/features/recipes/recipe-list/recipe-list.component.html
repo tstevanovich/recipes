@@ -7,7 +7,7 @@
     <button mat-raised-button color="primary" routerLink="new" *ngIf="isAuth()">New Recipe</button>
   </mat-card-header>
   <mat-card-content>
-    <span *ngIf="this.recipes.length == 0">Please login then fetch data to see recipe list.</span>
+    <span *ngIf="this.recipes.length == 0">Please login to see the recipe list.</span>
     <app-recipe-item *ngFor="let recipe of recipes; let i = index" [recipe]="recipe" [index]="i"></app-recipe-item>
   </mat-card-content>
 </mat-card>
