@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { Ingredient } from '@app/core/models/ingredient.model';
 import { ShoppingListService } from '@app/core/services/shopping-list.service';
-import { Ingredient } from '@app/shared/models/ingredient.model';
 import { Subscription } from 'rxjs';
 
 @Component({

@@ -26,7 +26,6 @@ const MODULES = [CommonModule];
 @NgModule({
   imports: [MODULES],
   declarations: [COMPONENTS],
-  providers: [PROVIDERS],
-  exports: [MODULES, COMPONENTS]
+  providers: [PROVIDERS]
 })
 export class CoreModule {}
