@@ -38,7 +38,7 @@ export class RecipeEditComponent implements OnInit {
       this.recipeImagePath = recipe.imagePath;
       this.recipeDescription = recipe.description;
       if (recipe['ingredients']) {
-        for (let ingredient of recipe.ingredients) {
+        for (const ingredient of recipe.ingredients) {
           this.recipeIngredients.push(
             this.fb.group({
               name: [ingredient.name, Validators.required],

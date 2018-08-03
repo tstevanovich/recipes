@@ -6,7 +6,7 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <alert></alert>
+    <app-alert></app-alert>
     <form novalidate [formGroup]="signupForm" #formDirective="ngForm" class="signup-form" (ngSubmit)="onSignup()">
       <mat-form-field class="signup-full-width">
         <input type="email" matInput placeholder="Email" formControlName="email">

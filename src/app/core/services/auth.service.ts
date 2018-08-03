@@ -4,7 +4,7 @@ import { AlertService } from '@app/core/services/alert.service';
 import { DataStorageService } from '@app/core/services/data-storage.service';
 
 // Firebase App is always required and must be first
-var firebase = require('firebase/app');
+const firebase = require('firebase/app');
 
 // Add additional services that you want to use
 require('firebase/auth');
