@@ -8,9 +8,11 @@ import { AuthGuard } from '@app/core/services/auth-guard.service';
 import { AuthService } from '@app/core/services/auth.service';
 import { DataStorageService } from '@app/core/services/data-storage.service';
 import { RecipeService } from '@app/core/services/recipe.service';
+import { ShoppingListService } from '@app/core/services/shopping-list.service';
 
 const COMPONENTS = [];
 const PROVIDERS = [
+  ShoppingListService,
   RecipeService,
   DataStorageService,
   AuthService,
