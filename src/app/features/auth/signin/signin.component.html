@@ -1,25 +1,27 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>
-      <mat-icon>link</mat-icon>
-      <h2>Sign In</h2>
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <app-alert></app-alert>
-    <form novalidate [formGroup]="signinForm" #formDirective="ngForm" class="signup-form" (ngSubmit)="onSignin()">
-      <mat-form-field class="signin-full-width">
-        <input type="email" matInput placeholder="Email" formControlName="email">
-        <mat-error *ngIf="f.email.errors?.required">Please enter an email address</mat-error>
-        <mat-error *ngIf="f.email.errors?.email">Please enter a valid email</mat-error>
-      </mat-form-field>
-      <mat-form-field class="signin-full-width">
-        <input type="password" matInput placeholder="Password" formControlName="password">
-        <mat-error *ngIf="f.password.errors?.required">Please enter a password</mat-error>
-        <mat-error *ngIf="f.password.errors?.email">Password must be at least 6 characters</mat-error>
-      </mat-form-field>
-      <button mat-raised-button color="primary" [disabled]="this.signinForm.invalid" type="submit">Log In</button>
-      <button mat-raised-button color="warn" type="button" (click)="onClear(formDirective)">Cancel</button>
-    </form>
-  </mat-card-content>
-</mat-card>
+<div class="content">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>link</mat-icon>
+        <h2>Sign In</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-alert></app-alert>
+      <form novalidate [formGroup]="signinForm" #formDirective="ngForm" class="signup-form" (ngSubmit)="onSignin()">
+        <mat-form-field class="signin-full-width">
+          <input type="email" matInput placeholder="Email" formControlName="email">
+          <mat-error *ngIf="f.email.errors?.required">Please enter an email address</mat-error>
+          <mat-error *ngIf="f.email.errors?.email">Please enter a valid email</mat-error>
+        </mat-form-field>
+        <mat-form-field class="signin-full-width">
+          <input type="password" matInput placeholder="Password" formControlName="password">
+          <mat-error *ngIf="f.password.errors?.required">Please enter a password</mat-error>
+          <mat-error *ngIf="f.password.errors?.email">Password must be at least 6 characters</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="this.signinForm.invalid" type="submit">Log In</button>
+        <button mat-raised-button color="warn" type="button" (click)="onClear(formDirective)">Cancel</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

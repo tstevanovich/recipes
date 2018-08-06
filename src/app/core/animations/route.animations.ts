@@ -14,7 +14,7 @@ export const fadeAnimation = trigger('fadeAnimation', [
       // here we apply a style and use the animate function to apply the style over 0.3 seconds
       [
         style({ transform: 'translateY(0%)', opacity: 1 }),
-        animate('0.2s ease-in-out', style({ transform: 'translateY(-3%)', opacity: 0 }))
+        animate('0.2s ease-in-out', style({ transform: 'translateY(-25%)', opacity: 0 }))
       ],
       { optional: true }
     ),
@@ -22,7 +22,7 @@ export const fadeAnimation = trigger('fadeAnimation', [
       ':enter',
       [
         style({
-          transform: 'translateY(-3%)',
+          transform: 'translateY(-25%)',
           opacity: 0
         }),
         animate('0.5s ease-in-out', style({ transform: 'translateY(0%)', opacity: 1 }))
