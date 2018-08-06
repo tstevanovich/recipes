@@ -52,8 +52,8 @@
         <button mat-menu-item (click)="onFetchData()">Fetch Data</button>
       </mat-menu>
     </mat-toolbar>
-    <div class="content">
-      <router-outlet></router-outlet>
+    <div class="content" [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+      <router-outlet #o="outlet"></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

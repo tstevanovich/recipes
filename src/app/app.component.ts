@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { fadeAnimation } from '@app/core/animations/route.animations';
 import { AuthService } from '@app/core/services/auth.service';
 import { DataStorageService } from '@app/core/services/data-storage.service';
 import { Observable } from 'rxjs';
@@ -14,7 +15,8 @@ require('firebase/auth');
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [fadeAnimation]
 })
 export class AppComponent implements OnInit {
   isHandset$: Observable<boolean> = this.breakpointObserver
