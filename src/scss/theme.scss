@@ -1,14 +1,14 @@
 @import '~@angular/material/theming';
 @include mat-core();
 // Colors
-$primary-color-dark: #512DA8;
-$primary-color: #673AB7;
-$primary-color-light: #D1C4E9;
-$primary-color-text: #FFFFFF;
-$accent-color: #03A9F4;
+$primary-color-dark: #512da8;
+$primary-color: #673ab7;
+$primary-color-light: #d1c4e9;
+$primary-color-text: #ffffff;
+$accent-color: #03a9f4;
 $primary-text-color: #212121;
 $secondary-text-color: #757575;
-$divider-color: #BDBDBD;
+$divider-color: #bdbdbd;
 $warn-color: red;
 // Create Theme
 $app-primary: mat-palette($mat-deep_purple);
