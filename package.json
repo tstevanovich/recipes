@@ -10,6 +10,11 @@
     "e2e": "ng e2e",
     "deploy": "ng build --prod --base-href https://tstevanovich.github.io/recipes/ && ngh --dir=dist/recipes"
   },
+  "husky": {
+    "hooks": {
+        "pre-commit": "pretty-quick — staged && ng lint"
+    }
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^8.1.0",
@@ -38,6 +43,7 @@
     "@types/jasminewd2": "~2.0.6",
     "@types/node": "^12.6.1",
     "codelyzer": "^5.1.0",
+    "husky": "^3.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -45,10 +51,13 @@
     "karma-coverage-istanbul-reporter": "~2.0.5",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
     "protractor": "~5.4.2",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
-    "tslint-jasmine-rules": "^1.6.0",
+    "tslint-angular": "^3.0.2",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.4.5"
   }
 }

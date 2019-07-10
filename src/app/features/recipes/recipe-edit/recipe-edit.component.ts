@@ -79,15 +79,18 @@ export class RecipeEditComponent implements OnInit {
 
   // create a new form array if a new ingredient is added
   onAddIngredient() {
-    (<FormArray>this.recipeForm.get('ingredients')).push(
+    (this.recipeForm.get('ingredients') as FormArray).push(
       this.fb.group({
         name: ['', Validators.required],
-        amount: ['', [Validators.required, Validators.pattern('^[1-9]+[0-9]*$')]]
+        amount: [
+          '',
+          [Validators.required, Validators.pattern('^[1-9]+[0-9]*$')]
+        ]
       })
     );
   }
 
   onDeleteIngredient(index: number) {
-    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
+    (this.recipeForm.get('ingredients') as FormArray).removeAt(index);
   }
 }

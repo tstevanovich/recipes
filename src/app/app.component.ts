@@ -30,7 +30,10 @@ export class AppComponent implements OnInit {
     { link: 'shopping-list', label: 'Shopping List' }
   ];
   // navigation if user is not authenticated
-  authnavigation = [{ link: 'signup', label: 'Register' }, { link: 'signin', label: 'Login' }];
+  authnavigation = [
+    { link: 'signup', label: 'Register' },
+    { link: 'signin', label: 'Login' }
+  ];
 
   constructor(
     public breakpointObserver: BreakpointObserver,
