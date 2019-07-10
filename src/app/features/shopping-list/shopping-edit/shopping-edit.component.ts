@@ -1,7 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
-import { Ingredient } from '@app/core/models/ingredient.model';
+import {
+  FormBuilder,
+  FormGroup,
+  FormGroupDirective,
+  Validators
+} from '@angular/forms';
 import { ShoppingListService } from '@app/core/services/shopping-list.service';
+import { Ingredient } from '@app/shared/models/ingredient.model';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -16,20 +21,25 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editedItemIndex: number;
   editedItem: Ingredient;
 
-  constructor(private shoppingListService: ShoppingListService, private fb: FormBuilder) {}
+  constructor(
+    private shoppingListService: ShoppingListService,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit() {
     // creates subscription if form goes into editing state
-    this.subscription = this.shoppingListService.startedEditing.subscribe((index: number) => {
-      this.editedItemIndex = index;
-      this.editMode = true;
-      this.editedItem = this.shoppingListService.getIngredient(index);
-      // update form values
-      this.shoppingEditForm.setValue({
-        name: this.editedItem.name,
-        amount: this.editedItem.amount
-      });
-    });
+    this.subscription = this.shoppingListService.startedEditing.subscribe(
+      (index: number) => {
+        this.editedItemIndex = index;
+        this.editMode = true;
+        this.editedItem = this.shoppingListService.getIngredient(index);
+        // update form values
+        this.shoppingEditForm.setValue({
+          name: this.editedItem.name,
+          amount: this.editedItem.amount
+        });
+      }
+    );
 
     // build form and set validation
     this.shoppingEditForm = this.fb.group({
@@ -55,10 +65,16 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       return;
     }
     // get form values
-    const newIngredient = new Ingredient(this.f.name.value, this.f.amount.value);
+    const newIngredient = new Ingredient(
+      this.f.name.value,
+      this.f.amount.value
+    );
     if (this.editMode) {
       // edit ingredient
-      this.shoppingListService.updateIngredient(this.editedItemIndex, newIngredient);
+      this.shoppingListService.updateIngredient(
+        this.editedItemIndex,
+        newIngredient
+      );
     } else {
       // add ingredient
       this.shoppingListService.addIngredient(newIngredient);

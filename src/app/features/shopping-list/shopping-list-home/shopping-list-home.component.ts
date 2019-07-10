@@ -1,7 +1,7 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Ingredient } from '@app/core/models/ingredient.model';
 import { ShoppingListService } from '@app/core/services/shopping-list.service';
+import { Ingredient } from '@app/shared/models/ingredient.model';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
