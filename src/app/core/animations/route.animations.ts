@@ -1,4 +1,10 @@
-import { animate, query, style, transition, trigger } from '@angular/animations';
+import {
+  animate,
+  query,
+  style,
+  transition,
+  trigger
+} from '@angular/animations';
 
 export const fadeAnimation = trigger('fadeAnimation', [
   // The '* => *' will trigger the animation to change between any two states
@@ -14,7 +20,10 @@ export const fadeAnimation = trigger('fadeAnimation', [
       // here we apply a style and use the animate function to apply the style over 0.3 seconds
       [
         style({ transform: 'translateY(0%)', opacity: 1 }),
-        animate('0.2s ease-in-out', style({ transform: 'translateY(-25%)', opacity: 0 }))
+        animate(
+          '0.2s ease-in-out',
+          style({ transform: 'translateY(-25%)', opacity: 0 })
+        )
       ],
       { optional: true }
     ),
@@ -25,7 +34,10 @@ export const fadeAnimation = trigger('fadeAnimation', [
           transform: 'translateY(-25%)',
           opacity: 0
         }),
-        animate('0.5s ease-in-out', style({ transform: 'translateY(0%)', opacity: 1 }))
+        animate(
+          '0.5s ease-in-out',
+          style({ transform: 'translateY(0%)', opacity: 1 })
+        )
       ],
       {
         optional: true

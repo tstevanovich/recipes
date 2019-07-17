@@ -8,7 +8,10 @@ describe('DataStorageService', () => {
     });
   });
 
-  it('should be created', inject([DataStorageService], (service: DataStorageService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should be created', inject(
+    [DataStorageService],
+    (service: DataStorageService) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 });

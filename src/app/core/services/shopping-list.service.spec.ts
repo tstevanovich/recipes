@@ -8,7 +8,10 @@ describe('ShoppingListService', () => {
     });
   });
 
-  it('should be created', inject([ShoppingListService], (service: ShoppingListService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should be created', inject(
+    [ShoppingListService],
+    (service: ShoppingListService) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 });

@@ -6,7 +6,10 @@ import { ShoppingListHomeComponent } from '@app/features/shopping-list/shopping-
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'recipes', loadChildren: './features/recipes/recipes.module#RecipesModule' },
+  {
+    path: 'recipes',
+    loadChildren: './features/recipes/recipes.module#RecipesModule'
+  },
   { path: 'shopping-list', component: ShoppingListHomeComponent }
 ];
 

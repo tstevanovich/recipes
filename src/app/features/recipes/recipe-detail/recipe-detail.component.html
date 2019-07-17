@@ -9,25 +9,35 @@
     <p *ngIf="!recipe; else recipeDetail">Please select a Recipe!</p>
     <ng-template #recipeDetail>
       <p>
-        <img src="{{recipe.imagePath}}" alt="{{recipe.name}}">
+        <img src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" />
       </p>
-      <h3>{{recipe.name}}</h3>
+      <h3>{{ recipe.name }}</h3>
       <p>
-        <button mat-raised-button [matMenuTriggerFor]="recipeMenu" color="primary" *ngIf="isAuth()">
+        <button
+          mat-raised-button
+          [matMenuTriggerFor]="recipeMenu"
+          color="primary"
+          *ngIf="isAuth()"
+        >
           Manage Recipe
           <mat-icon>arrow_drop_down</mat-icon>
         </button>
         <mat-menu #recipeMenu="matMenu">
-          <button mat-menu-item (click)="onAddToShoppingList()">To Shopping List</button>
+          <button mat-menu-item (click)="onAddToShoppingList()">
+            To Shopping List
+          </button>
           <button mat-menu-item routerLink="edit">Edit Recipe</button>
-          <button mat-menu-item (click)="onDeleteRecipe()">Delete Recipe</button>
+          <button mat-menu-item (click)="onDeleteRecipe()">
+            Delete Recipe
+          </button>
         </mat-menu>
       </p>
-      <p>{{recipe.description}}</p>
+      <p>{{ recipe.description }}</p>
       <ul>
-        <li *ngFor="let ingredient of recipe.ingredients">{{ingredient.name}} - {{ingredient.amount}}</li>
+        <li *ngFor="let ingredient of recipe.ingredients">
+          {{ ingredient.name }} - {{ ingredient.amount }}
+        </li>
       </ul>
     </ng-template>
-
   </mat-card-content>
 </mat-card>
