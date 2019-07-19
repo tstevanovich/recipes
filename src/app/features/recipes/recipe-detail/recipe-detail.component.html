@@ -13,12 +13,7 @@
       </p>
       <h3>{{ recipe.name }}</h3>
       <p>
-        <button
-          mat-raised-button
-          [matMenuTriggerFor]="recipeMenu"
-          color="primary"
-          *ngIf="isAuth()"
-        >
+        <button mat-raised-button [matMenuTriggerFor]="recipeMenu" color="primary" *ngIf="isAuth()">
           Manage Recipe
           <mat-icon>arrow_drop_down</mat-icon>
         </button>

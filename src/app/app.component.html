@@ -5,43 +5,24 @@
       <span>Recipe Book</span>
     </div>
     <mat-nav-list>
-      <a
-        mat-list-item
-        *ngFor="let nav of navigation"
-        (click)="sidenav.close()"
-        [routerLink]="[nav.link]"
-        routerLinkActive="active"
-      >
+      <a mat-list-item *ngFor="let nav of navigation" (click)="sidenav.close()" [routerLink]="[nav.link]"
+        routerLinkActive="active">
         {{ nav.label }}
       </a>
       <span *ngIf="!isAuth()">
-        <a
-          mat-list-item
-          *ngFor="let nav of authnavigation"
-          (click)="sidenav.close()"
-          [routerLink]="[nav.link]"
-          routerLinkActive="active"
-        >
+        <a mat-list-item *ngFor="let nav of authnavigation" (click)="sidenav.close()" [routerLink]="[nav.link]"
+          routerLinkActive="active">
           {{ nav.label }}
         </a>
       </span>
-      <a
-        mat-list-item
-        class="nav-button"
-        *ngIf="isAuth()"
-        (click)="onLogout(); sidenav.close()"
-      >
+      <a mat-list-item class="nav-button" *ngIf="isAuth()" (click)="onLogout(); sidenav.close()">
         Logout
       </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button
-        mat-icon-button
-        *ngIf="isHandset$ | async"
-        (click)="sidenav.open()"
-      >
+      <button mat-icon-button *ngIf="isHandset$ | async" (click)="sidenav.open()">
         <mat-icon>menu</mat-icon>
       </button>
       <span [ngClass]="{ center: isHandset$ | async }" class="branding spacer">
@@ -53,32 +34,17 @@
         </a>
       </span>
       <span *ngIf="(isHandset$ | async) === false">
-        <button
-          mat-button
-          class="nav-button"
-          *ngFor="let nav of navigation"
-          [routerLink]="[nav.link]"
-          routerLinkActive="active"
-        >
+        <button mat-button class="nav-button" *ngFor="let nav of navigation" [routerLink]="[nav.link]"
+          routerLinkActive="active">
           {{ nav.label }}
         </button>
         <span *ngIf="!isAuth()">
-          <button
-            mat-button
-            class="nav-button"
-            *ngFor="let nav of authnavigation"
-            [routerLink]="[nav.link]"
-            routerLinkActive="active"
-          >
+          <button mat-button class="nav-button" *ngFor="let nav of authnavigation" [routerLink]="[nav.link]"
+            routerLinkActive="active">
             {{ nav.label }}
           </button>
         </span>
-        <button
-          mat-button
-          class="nav-button"
-          *ngIf="isAuth()"
-          (click)="onLogout()"
-        >
+        <button mat-button class="nav-button" *ngIf="isAuth()" (click)="onLogout()">
           Logout
         </button>
       </span>
@@ -90,10 +56,7 @@
         <button mat-menu-item (click)="onFetchData()">Fetch Data</button>
       </mat-menu>
     </mat-toolbar>
-    <div
-      class="content"
-      [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''"
-    >
+    <div class="content" [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
       <router-outlet #o="outlet"></router-outlet>
     </div>
   </mat-sidenav-content>

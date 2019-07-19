@@ -7,13 +7,9 @@
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <span *ngIf="!isAuth()"
-        >Please login to continue using the recipe book application.</span
-      >
-      <span *ngIf="isAuth()"
-        >Please navigate through the recipes and add the recipe ingredients into
-        the shopping list.</span
-      >
+      <span *ngIf="!isAuth()">Please login to continue using the recipe book application.</span>
+      <span *ngIf="isAuth()">Please navigate through the recipes and add the recipe ingredients into
+        the shopping list.</span>
     </mat-card-content>
   </mat-card>
 </div>

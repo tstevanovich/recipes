@@ -6,57 +6,25 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form
-      novalidate
-      [formGroup]="shoppingEditForm"
-      #formDirective="ngForm"
-      class="shopping-form"
-      (ngSubmit)="onSubmit(formDirective)"
-    >
+    <form novalidate [formGroup]="shoppingEditForm" #formDirective="ngForm" class="shopping-form"
+      (ngSubmit)="onSubmit(formDirective)">
       <mat-form-field class="shopping-full-width">
         <input type="text" matInput placeholder="Name" formControlName="name" />
-        <mat-error *ngIf="!!f.name.errors?.required"
-          >Please enter ingredient name</mat-error
-        >
+        <mat-error *ngIf="!!f.name.errors?.required">Please enter ingredient name</mat-error>
       </mat-form-field>
       <mat-form-field class="shopping-full-width">
-        <input
-          type="number"
-          matInput
-          placeholder="Amount"
-          formControlName="amount"
-        />
-        <mat-error *ngIf="!!f.amount.errors?.required"
-          >Please enter amount of ingredient</mat-error
-        >
-        <mat-error *ngIf="!!f.amount.errors?.pattern"
-          >Please enter amount greater than 0</mat-error
-        >
+        <input type="number" matInput placeholder="Amount" formControlName="amount" />
+        <mat-error *ngIf="!!f.amount.errors?.required">Please enter amount of ingredient</mat-error>
+        <mat-error *ngIf="!!f.amount.errors?.pattern">Please enter amount greater than 0</mat-error>
       </mat-form-field>
-      <button
-        mat-raised-button
-        color="primary"
-        [disabled]="this.shoppingEditForm.invalid"
-        type="submit"
-      >
+      <button mat-raised-button color="primary" [disabled]="this.shoppingEditForm.invalid" type="submit">
         {{ editMode ? 'Update' : 'Add' }}
       </button>
-      <button
-        mat-raised-button
-        color="warn"
-        *ngIf="editMode"
-        type="button"
-        (click)="onDelete()"
-      >
+      <button mat-raised-button color="warn" *ngIf="editMode" type="button" (click)="onDelete()">
         Delete
       </button>
-      <button
-        mat-raised-button
-        color="accent"
-        [disabled]="!this.shoppingEditForm.dirty && !this.editMode"
-        type="reset"
-        (click)="onClear()"
-      >
+      <button mat-raised-button color="accent" [disabled]="!this.shoppingEditForm.dirty && !this.editMode" type="reset"
+        (click)="onClear()">
         Clear
       </button>
     </form>
