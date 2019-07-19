@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>
-      <mat-icon>edit</mat-icon>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
       <h2>Edit Recipe</h2>
     </mat-card-title>
   </mat-card-header>
@@ -24,31 +24,26 @@
         <mat-error *ngIf="!!f.description.errors?.required">Please enter a description of the recipe</mat-error>
       </mat-form-field>
       <div formArrayName="ingredients">
-        <div class="ingredients" *ngFor="
-            let ingredientCtrl of recipeForm.get('ingredients')['controls'];
-            let i = index
-          " [formGroupName]="i">
+        <div class="ingredients" *ngFor="let ingredientCtrl of recipeForm.get('ingredients')['controls'];let i = index"
+          [formGroupName]="i">
           <mat-form-field class="ingredient">
             <input type="text" matInput placeholder="Ingredient" formControlName="name" />
             <mat-error *ngIf="!!f.ingredients.controls[i].controls.name.errors?.required">Ingredient Name?</mat-error>
           </mat-form-field>
           <mat-form-field class="ingredient">
             <input type="number" matInput placeholder="Amount" formControlName="amount" />
-            <mat-error *ngIf="
-                !!f.ingredients.controls[i].controls.amount.errors?.required
-              ">Ingredient Amount?</mat-error>
-            <mat-error *ngIf="
-                !!f.ingredients.controls[i].controls.amount.errors?.pattern
-              ">Not valid amount</mat-error>
+            <mat-error *ngIf="!!f.ingredients.controls[i].controls.amount.errors?.required">Ingredient Amount?
+            </mat-error>
+            <mat-error *ngIf="!!f.ingredients.controls[i].controls.amount.errors?.pattern">Not valid amount</mat-error>
           </mat-form-field>
           <button mat-icon-button color="primary" type="button" class="ingredient" (click)="onDeleteIngredient(i)">
-            <mat-icon>delete</mat-icon>
+            <i class="fa fa-trash" aria-hidden="true"></i>
           </button>
         </div>
       </div>
       <div class="recipe-full-width">
         <button mat-stroked-button color="primary" type="button" (click)="onAddIngredient()">
-          <mat-icon>add</mat-icon>Add Ingredient
+          <i class="fa fa-plus" aria-hidden="true"></i>Add Ingredient
         </button>
       </div>
       <button mat-raised-button color="primary" [disabled]="!recipeForm.valid" type="submit">
